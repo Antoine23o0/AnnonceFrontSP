@@ -28,12 +28,7 @@ export class AuthComponent {
     this.authService.login(this.username, this.password,this.role);
     this.authService.setProfil(this.username);
 
-    // En fonction du rôle choisi, on redirige l'utilisateur vers la bonne page
-    if (this.role === 'admin') {
-      this.router.navigate(['/admin-dashboard']);  // Page d'administration
-    } else {
-      this.router.navigate(['/annonces']);  // Page des annonces
-    }
+    this.router.navigate(['/annonces']);
   }
 
 }

@@ -1,0 +1,22 @@
+<div class="container mt-4">
+  <h3>Créer une nouvelle annonce</h3>
+  <form #form="ngForm" (ngSubmit)="ajouterAnnonce()" novalidate>
+    <div class="mb-3">
+      <label for="title" class="form-label">Titre</label>
+      <input id="title" class="form-control" [(ngModel)]="annonce.title" name="title" required />
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea id="description" class="form-control" [(ngModel)]="annonce.description" name="description" required></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="adress" class="form-label">Adresse</label>
+      <input id="adress" class="form-control" [(ngModel)]="annonce.adress" name="adress" required />
+    </div>
+    <div class="mb-3">
+      <label for="mail" class="form-label">Email</label>
+      <input id="mail" class="form-control" [(ngModel)]="annonce.mail" name="mail" type="email" required />
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Créer</button>
+  </form>
+</div>

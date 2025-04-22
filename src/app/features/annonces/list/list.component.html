@@ -1,1 +1,28 @@
-<p>list works!</p>
+<div class="container mt-4">
+  <h3>Liste des annonces</h3>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Titre</th>
+      <th>Description</th>
+      <th>Adresse</th>
+      <th>Email</th>
+      <th>Date</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let annonce of annonces">
+      <td>{{ annonce.title }}</td>
+      <td>{{ annonce.description }}</td>
+      <td>{{ annonce.adress }}</td>
+      <td>{{ annonce.mail }}</td>
+      <td>{{ annonce.date | date: 'short' }}</td>
+      <td>
+        <button class="btn btn-warning" (click)="goToModifier(annonce.id)">Modifier</button>
+        <button class="btn btn-danger ms-2" *ngIf="isAdmin" (click)="deleteAnnonce(annonce.id)">Supprimer</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
